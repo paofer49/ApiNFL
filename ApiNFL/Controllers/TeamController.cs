@@ -1,11 +1,13 @@
 ﻿using ApiNFL.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
 namespace ApiNFL.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+    [Route("api/[controller]")]
     public class TeamController : ControllerBase
     {
         private readonly string _connectionString;
